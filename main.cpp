@@ -1,6 +1,7 @@
 #include "src/functions.h"
 
 int main(){
-    test();
+    call_dfs();
+    call_bfs();
     return 0;
 }
