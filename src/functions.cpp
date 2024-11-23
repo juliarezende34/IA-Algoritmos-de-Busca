@@ -1,4 +1,5 @@
 #include "functions.h"
+int memoryUsage = 0, memoryDFS = 0;
 
 vector<vector<int>> matriz = {
         {0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -56,6 +57,7 @@ void DFS(vector<vector<int>>& matriz, int start, int end, vector<bool>& visited,
 
     visited[start] = true;
     currentPath.insert(start);
+    memoryDFS += sizeof(start);
 
     for (int i = 0; i < (int)matriz.size(); ++i) {
         if (matriz[start][i] && !visited[i]) {
@@ -73,7 +75,7 @@ void call_dfs() {
     cout << " -- DFS -- " << endl;
     // Assuming 'U' has index 20 and 'E' has index 4
     int start = 20; // 'U'
-    int end = 4;   // 'E'
+    int end = 1;   // 'E'
 
     int n = matriz.size();
     vector<bool> visited(n, false);
@@ -82,6 +84,8 @@ void call_dfs() {
 
     bool foundPath = false;
     DFS(matriz, start, end, visited, parent, currentPath, foundPath);
+
+    cout << "Memória usada: " << memoryDFS << " B\n";
 }
 
 void BFS(vector<vector<int>>& matriz, int start, int end) {
@@ -116,6 +120,7 @@ void BFS(vector<vector<int>>& matriz, int start, int end) {
                 visited[i] = true;
                 parent[i] = curr;
                 q.push(i);
+                memoryUsage += sizeof(i);
             }
         }
     }
@@ -125,7 +130,9 @@ void call_bfs() {
     cout << " -- BFS -- " << endl;
     // Assuming 'U' has index 20 and 'E' has index 4
     int start = 20; // 'U'
-    int end = 4;   // 'E'
+    int end = 1;   // 'E'
 
     BFS(matriz, start, end);
+
+    cout << "Memória usada: " << memoryUsage << " B\n";
 }
