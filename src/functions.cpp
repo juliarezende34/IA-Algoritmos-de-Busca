@@ -75,7 +75,7 @@ void call_dfs() {
     cout << " -- DFS -- " << endl;
     // Assuming 'U' has index 20 and 'E' has index 4
     int start = 20; // 'U'
-    int end = 1;   // 'E'
+    int end = 4;   // 'E'
 
     int n = matriz.size();
     vector<bool> visited(n, false);
@@ -130,7 +130,7 @@ void call_bfs() {
     cout << " -- BFS -- " << endl;
     // Assuming 'U' has index 20 and 'E' has index 4
     int start = 20; // 'U'
-    int end = 1;   // 'E'
+    int end = 4;   // 'E'
 
     BFS(matriz, start, end);
 
