@@ -7,6 +7,8 @@
 ![Linguagem](https://img.shields.io/badge/Linguagem-C++-blue)
 </div>
 
+Implementação e comparação de dois diferentes algoritmos de busca, BFS e DFS, a um problema clássico de busca - o problema do labirinto.
+
 ### Compilação e Execução
 
 | Comando                |  Função                                                                                           |                     
